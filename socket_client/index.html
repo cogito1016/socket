@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Socket Client</title>
+    <script>
+      const ws = new WebSocket("ws://localhost:3000");
+
+      ws.onopen = (event) => {
+        ws.send("Client Message: Hi!");
+      };
+
+      ws.onmessage = (event) => {
+        console.log(`Server message: ${event.data}`);
+      };
+
+      ws.onerror = (evnet) => {
+        console.log(`Server error message: ${event.data}`);
+      };
+    </script>
+  </head>
+</html>
