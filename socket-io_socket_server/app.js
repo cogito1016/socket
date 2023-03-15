@@ -1,3 +1,5 @@
+const path = require("path");
+
 const app = require("express")();
 const server = require("http").createServer(app);
 
@@ -8,7 +10,7 @@ server.listen(3000, () => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  res.sendFile(path.join(__dirname, "../socket-io_socket_client/index.html"));
 });
 
 //연결이되면 소켓이 연결됨
